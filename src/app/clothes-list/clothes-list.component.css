@@ -1,0 +1,7 @@
+.table>thead>tr>th {
+  border-bottom: 2px solid #ddd;
+}
+.table>tbody>tr>td>img{
+  width: 15em;
+height: 15em;
+}
