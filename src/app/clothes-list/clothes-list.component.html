@@ -15,6 +15,14 @@
       <td>{{clothe.type | lowercase }}</td>
       <td>{{clothe.price | currency}}</td>
       <td><span class="btn btn-warning" *ngIf="clothe.stock == 0" >Sin Stock</span> </td>
+      <td>
+        <div class="input-group input-group-sm mb-3">
+          <button type="button" class="btn btn-danger btn-sm" >-</button>
+          <input class="form-control form-control-sm" type="number"/>
+          <button type="button" class="btn btn-info btn-sm">+</button>
+          <button class="btn btn-dark">Agregar</button>
+        </div>
+      </td>
     </tr>
 
   </tbody>
