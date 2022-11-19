@@ -9,26 +9,12 @@
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <td><img [src]="clothesSantorini.image" [alt]="clothesSantorini.name"></td>
-      <td>{{clothesSantorini.name}} </td>
-      <td>{{clothesSantorini.type}}</td>
-      <td>{{clothesSantorini.price}}</td>
-      <td>{{clothesSantorini.stock}}</td>
-    </tr>
-    <tr>
-      <td><img [src]="clothesCreta.image" [alt]="clothesCreta.name"></td>
-      <td>{{clothesCreta.name}}</td>
-      <td>{{clothesCreta.type}}</td>
-      <td>{{clothesCreta.price}}</td>
-      <td>{{clothesCreta.stock}}</td>
-    </tr>
-    <tr>
-      <td><img [src]="clothesHvar.image" [alt]="clothesHvar.name"></td>
-      <td>{{clothesHvar.name}}</td>
-      <td>{{clothesHvar.type}}</td>
-      <td>{{clothesHvar.price}}</td>
-      <td>{{clothesHvar.stock}}</td>
+    <tr *ngFor="let clothe of clothes" [ngClass]="{'sale' : clothe.sale}">
+      <td><img [src]="clothe.image" [alt]="clothe.name"></td>
+      <td>{{clothe.name | lowercase }} </td>
+      <td>{{clothe.type | lowercase }}</td>
+      <td>{{clothe.price | currency}}</td>
+      <td><span class="btn btn-warning" *ngIf="clothe.stock == 0" >Sin Stock</span> </td>
     </tr>
 
   </tbody>

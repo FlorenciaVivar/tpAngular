@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { clothe } from './clothe';
 
 @Component({
   selector: 'app-clothes-list',
@@ -7,28 +8,32 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ClothesListComponent implements OnInit {
 
-  clothesSantorini = {
-    "name" :"W's Santorini Island",
-    "type":"Remera",
-    "price":"15000",
-    "stock":"15",
-    "image":"assets/img/santorini.jpg"
+  clothes: clothe [] = [
+  {
+    "name" :"w's Santorini Island",
+    "type":"remera",
+    "price": 15000,
+    "stock": 15,
+    "image":"assets/img/santorini.jpg",
+    "sale":false,
+  },
+  {
+    "name" :"w's Creta Island",
+    "type":"pantalon",
+    "price":35000,
+    "stock":0,
+    "image":"assets/img/creta.jpg",
+    "sale":true,
+  },
+ {
+    "name" :"w's Hvar Logo Hat",
+    "type":"gorra",
+    "price":12500,
+    "stock":10,
+    "image":"assets/img/hvar.jpg",
+    "sale":false,
   }
-  clothesCreta = {
-    "name" :"W's Creta Island",
-    "type":"Pantalon",
-    "price":"35000",
-    "stock":"5",
-    "image":"assets/img/creta.jpg"
-  }
-
-  clothesHvar = {
-    "name" :"W's Hvar Logo Hat",
-    "type":"Gorra",
-    "price":"12500",
-    "stock":"10",
-    "image":"assets/img/hvar.jpg"
-  }
+]
 
   constructor() { }
 
