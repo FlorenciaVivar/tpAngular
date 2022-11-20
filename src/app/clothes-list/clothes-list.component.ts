@@ -16,6 +16,7 @@ export class ClothesListComponent implements OnInit {
     "stock": 15,
     "image":"assets/img/santorini.jpg",
     "sale":false,
+    "quantity":0,
   },
   {
     "name" :"w's Creta Island",
@@ -24,6 +25,7 @@ export class ClothesListComponent implements OnInit {
     "stock":0,
     "image":"assets/img/creta.jpg",
     "sale":true,
+    "quantity":0,
   },
  {
     "name" :"w's Hvar Logo Hat",
@@ -32,12 +34,22 @@ export class ClothesListComponent implements OnInit {
     "stock":10,
     "image":"assets/img/hvar.jpg",
     "sale":false,
+    "quantity":0,
   }
 ]
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  upQuantity(clothes: clothe): void {
+    if(clothes.quantity < clothes.stock)
+    clothes.quantity++;
+  }
+  downQuantity(clothes: clothe): void {
+    if(clothes.quantity>0)
+    clothes.quantity--;
   }
 
 }

@@ -5,4 +5,5 @@
   stock: number;
   image: string;
   sale: boolean;
+  quantity: 0;
  }
