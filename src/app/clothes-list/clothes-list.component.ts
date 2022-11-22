@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { clothe } from './clothe';
+import { ClothesCartService } from '../clothes-cart.service';
+import { Clothe } from './clothe';
 
 @Component({
   selector: 'app-clothes-list',
@@ -8,7 +9,7 @@ import { clothe } from './clothe';
 })
 export class ClothesListComponent implements OnInit {
 
-  clothes: clothe [] = [
+  clothes: Clothe [] = [
   {
     "name" :"w's Santorini Island",
     "type":"remera",
@@ -38,18 +39,18 @@ export class ClothesListComponent implements OnInit {
   }
 ]
 
-  constructor() { }
+  constructor(private shoppingCart: ClothesCartService) {
+  }
 
   ngOnInit(): void {
   }
 
-  upQuantity(clothes: clothe): void {
-    if(clothes.quantity < clothes.stock)
-    clothes.quantity++;
+  // addToCart(clothe: Clothe): void{
+  //   this.shoppingCart.addToCart (clothe);
+  //   clothe.stock -= clothe.quantity;
+  //   clothe.quantity = 0;
+  // }
+  maxReached(m:string){
+    alert(m);
   }
-  downQuantity(clothes: clothe): void {
-    if(clothes.quantity>0)
-    clothes.quantity--;
-  }
-
 }

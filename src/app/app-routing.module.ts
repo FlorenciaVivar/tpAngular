@@ -1,12 +1,12 @@
 import { ClothesClothesComponent } from './clothes-clothes/clothes-clothes.component';
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 import { ClothesAboutComponent } from './clothes-about/clothes-about.component';
 
 const routes: Routes = [
-  {path: '',redirectTo: 'clothes',pathMatch:'full'},
+  {path:'',redirectTo: 'clothes',pathMatch:'full'},
   {path:'clothes',component: ClothesClothesComponent},
-  {path:'about',component: ClothesAboutComponent }
+  {path:'about',component: ClothesAboutComponent },
 
 ];
 

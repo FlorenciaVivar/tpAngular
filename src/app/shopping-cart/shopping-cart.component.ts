@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { clothe } from '../clothes-list/clothe';
+import { ClothesCartService } from '../clothes-cart.service';
+import { Clothe } from '../clothes-list/clothe';
 
 @Component({
   selector: 'app-shopping-cart',
@@ -9,7 +10,7 @@ import { clothe } from '../clothes-list/clothe';
 export class ShoppingCartComponent implements OnInit {
 
   total: number = 1000;
-  clothes: clothe [] = [
+  clothes: Clothe [] = [
     {
       "name" :"w's Santorini Island",
       "type":"remera",
@@ -38,7 +39,7 @@ export class ShoppingCartComponent implements OnInit {
       "quantity":0,
     }
   ]
-  constructor() {
+  constructor(private shoppingCart: ClothesCartService) {
 
   }
   ngOnInit(): void {

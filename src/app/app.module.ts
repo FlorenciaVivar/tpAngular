@@ -9,6 +9,7 @@ import { FormsModule } from '@angular/forms';
 import { ClothesAboutComponent } from './clothes-about/clothes-about.component';
 import { ClothesClothesComponent } from './clothes-clothes/clothes-clothes.component';
 import { AppRoutingModule } from './app-routing.module';
+import { InputIntegerComponent } from './input-integer/input-integer.component';
 
 @NgModule({
   declarations: [
@@ -16,12 +17,13 @@ import { AppRoutingModule } from './app-routing.module';
     ClothesListComponent,
     ShoppingCartComponent,
     ClothesAboutComponent,
-    ClothesClothesComponent
+    ClothesClothesComponent,
+    InputIntegerComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

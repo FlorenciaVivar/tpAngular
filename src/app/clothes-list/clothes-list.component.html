@@ -14,18 +14,11 @@
       <td><img [src]="clothe.image" [alt]="clothe.name"></td>
       <td>{{clothe.name | lowercase }} </td>
       <td>{{clothe.type | lowercase }}</td>
-      <td>{{clothe.price | currency}}</td>
-      <td><span class="btn btn-warning" *ngIf="clothe.stock == 0" >Sin Stock</span> </td>
+      <td>{{clothe.price | currency : 'ARS'}}</td>
+      <td><span class="btn btn-danger" *ngIf="clothe.stock == 0" >Sin Stock</span> </td>
       <td>
-        <div>
-          <button type="button" class="btn btn-outline-danger btn-sm" (click)="downQuantity(clothe)">-</button>
-          <input
-                type="number" class="text-center"
-                [(ngModel)]="clothe.quantity"
-                >
-          <button type="button" class="btn btn-outline-info btn-sm" (click)="upQuantity(clothe)">+</button>
-          <button type="button" class="btn btn-dark">Agregar</button>
-        </div>
+        <app-input-integer [(quantity)]="clothe.quantity" [max]="clothe.stock" *ngIf="clothe.stock" (maxReached)="maxReached($event)"></app-input-integer>
+        <!-- <button class="btn btn-dark" (click)="addToCart(clothe)">Agregar</button> -->
       </td>
     </tr>
 
