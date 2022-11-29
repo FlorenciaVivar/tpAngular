@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 import { ClothesCartService } from '../clothes-cart.service';
 import { Clothe } from '../clothes-list/clothe';
 
@@ -9,38 +10,9 @@ import { Clothe } from '../clothes-list/clothe';
 })
 export class ShoppingCartComponent implements OnInit {
 
-  total: number = 1000;
-  clothes: Clothe [] = [
-    {
-      "name" :"w's Santorini Island",
-      "type":"remera",
-      "price": 15000,
-      "stock": 15,
-      "image":"assets/img/santorini.jpg",
-      "sale":false,
-      "quantity":0,
-    },
-    {
-      "name" :"w's Creta Island",
-      "type":"pantalon",
-      "price":35000,
-      "stock":0,
-      "image":"assets/img/creta.jpg",
-      "sale":true,
-      "quantity":0,
-    },
-   {
-      "name" :"w's Hvar Logo Hat",
-      "type":"gorra",
-      "price":12500,
-      "stock":10,
-      "image":"assets/img/hvar.jpg",
-      "sale":false,
-      "quantity":0,
-    }
-  ]
+  cartList$: Observable<Clothe[]>;
   constructor(private shoppingCart: ClothesCartService) {
-
+    this.cartList$ = shoppingCart.cartList.asObservable();
   }
   ngOnInit(): void {
     throw new Error('Method not implemented.');

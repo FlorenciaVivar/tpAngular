@@ -1,26 +1,20 @@
 <div class="container-fluid">
   <h1>Carrito de compras</h1>
-  <table class="table">
-    <thead>
-      <tr>
-        <th >Item</th>
-        <th >Cantidad</th>
-        <th >Precio Unitario</th>
-      </tr>
-    </thead>
-    <tbody >
-      <tr *ngFor="let clothe of clothes" [ngClass]="{'sale' : clothe.sale}">
-        <td >{{clothe.name}}</td>
-        <td >1</td>
-        <td >{{clothe.price|currency: 'ARS'}}</td>
-      </tr>
-    </tbody>
-
-    <tfoot>
-      <th >Total productos</th>
-      <td></td>
-      <td>{{total | currency:'ARS'}}</td>
-    </tfoot>
+    <table class="table text-center">
+      <thead>
+        <tr class="table-primary">
+          <th>Nombre</th>
+          <th>Cantidad</th>
+          <th>Precio</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr  *ngFor = "let clothe of cartList$ | async ">
+          <th>{{clothe.name}}</th>
+          <th>{{clothe.quantity}}</th>
+          <th>{{clothe.price| currency : 'ARS'}}</th>
+        </tr>
+      </tbody>
   </table>
 
   <div class="text-end">

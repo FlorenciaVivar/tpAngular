@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { Clothe } from '../clothes-list/clothe';
+import { Clothe } from "../clothes-list/clothe";
 
 @Component({
   selector: 'app-input-integer',
@@ -43,5 +43,5 @@ export class InputIntegerComponent implements OnInit {
     console.log(event.key);
    this.quantityChange.emit(this.quantity);
 
- } 
+ }
 }

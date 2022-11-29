@@ -45,11 +45,11 @@ export class ClothesListComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  // addToCart(clothe: Clothe): void{
-  //   this.shoppingCart.addToCart (clothe);
-  //   clothe.stock -= clothe.quantity;
-  //   clothe.quantity = 0;
-  // }
+  addToCart(clothe: Clothe): void{
+    this.shoppingCart.addToCart (clothe);
+    clothe.stock -= clothe.quantity;
+    clothe.quantity = 0;
+  }
   maxReached(m:string){
     alert(m);
   }
