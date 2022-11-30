@@ -8,6 +8,7 @@ import { Clothe } from '../clothes-list/clothe';
   templateUrl: './shopping-cart.component.html',
   styleUrls: ['./shopping-cart.component.scss']
 })
+
 export class ShoppingCartComponent implements OnInit {
 
   cartList$: Observable<Clothe[]>;
@@ -15,6 +16,14 @@ export class ShoppingCartComponent implements OnInit {
     this.cartList$ = shoppingCart.cartList.asObservable();
   }
   ngOnInit(): void {
-    throw new Error('Method not implemented.');
   }
+// total():number{
+//     let total=0
+
+//     for (let i in this.cartList$) {
+//         total += this.cartList$[i].price * this.cartList$[i].quantity;
+//     }
+//     return total;
+//   }
+
 }

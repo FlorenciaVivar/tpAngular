@@ -3,21 +3,33 @@
     <table class="table text-center">
       <thead>
         <tr class="table-primary">
+          <th>Imagen</th>
           <th>Nombre</th>
           <th>Cantidad</th>
           <th>Precio</th>
+          <th>Subtotal</th>
+          <th></th>
         </tr>
       </thead>
       <tbody>
         <tr  *ngFor = "let clothe of cartList$ | async ">
+          <td >
+            <img class="miniatura" [src]="clothe.image" [alt]="clothe.name">
+            </td>
           <th>{{clothe.name}}</th>
           <th>{{clothe.quantity}}</th>
-          <th>{{clothe.price| currency : 'ARS'}}</th>
+          <th>{{clothe.price|currency : 'ARS' : 'symbol' : '1.0-0' }}</th>
+          <th>{{clothe.price*clothe.quantity|currency : 'ARS' : 'symbol' : '1.0-0' }}</th>
+        <th> <button class="btn btn-danger" >Eliminar</button>
+        </th>
         </tr>
       </tbody>
   </table>
 
-  <div class="text-end">
+  <div>
+    <div class="alert alert-success text-end" >El total de su compra es:
+      <h2 class="badge bg-success">1000</h2>
+    </div>
     <button class="btn btn-primary" >Comprar</button>
   </div>
 </div>

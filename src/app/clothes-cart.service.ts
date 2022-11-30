@@ -21,6 +21,8 @@ export class ClothesCartService {
     }else{
       item.quantity += clothe.quantity;
     }
-     this.cartList.next(this._cartList); //equivalente al emiit de eventos
+    console.log(this._cartList);
+
+    this.cartList.next(this._cartList); //equivalente al emiit de eventos
   }
 }
