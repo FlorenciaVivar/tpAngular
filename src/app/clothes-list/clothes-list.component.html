@@ -1,5 +1,4 @@
-
-<div class="row row-cols-1 row-cols-md-3 g-4">
+<div class="row row-cols-1 row-cols-md-3 g-4" id="cardComponent">
   <div class="card" style="width: 18rem;" *ngFor="let clothe of clothes" [ngClass]="{'sale' : clothe.sale}" >
     <img [src]="clothe.image" [alt]="clothe.name" class="card-img-top" >
     <div class="card-body" >
@@ -8,7 +7,7 @@
       <p><span class="btn btn-danger" *ngIf="clothe.stock == 0" >Sin Stock</span> </p>
     <div class="card-group">
       <app-input-integer [(quantity)]="clothe.quantity" [max]="clothe.stock" *ngIf="clothe.stock" (maxReached)="maxReached($event)"></app-input-integer>
-      <button class="btn btn-dark" (click)="addToCart(clothe)">Agregar</button>
+      <button id="button" class="btn btn-dark" (click)="addToCart(clothe)">Agregar</button>
       </div>
     </div>
   </div>
