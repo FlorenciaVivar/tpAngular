@@ -1,5 +1,10 @@
 <div>
   <button type="button" class="btn btn-outline-danger btn-sm" (click)="downQuantity()">-</button>
-  <input type="number" class="text-center" [(ngModel)]="quantity" (keyup)="changeQuantity($event)">
+  <input type="number" min="1" pattern="[a-z][0-9]" step="1" class="text-center"
+  [(ngModel)]="quantity"
+  (keyup)="changeQuantity($event)"
+  (keypress)="onlyNumber($event)"
+  (focusout)="verifyQuantity($event)"
+  >
   <button type="button" class="btn btn-outline-info btn-sm" (click)="upQuantity()">+</button>
 </div>

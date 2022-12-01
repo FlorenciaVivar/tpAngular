@@ -19,4 +19,5 @@ export class ClotheDataService {
               tap((clothes: Clothe[]) => clothes.forEach(clothe => clothe.quantity= 0))
             );
   }
+  
 }

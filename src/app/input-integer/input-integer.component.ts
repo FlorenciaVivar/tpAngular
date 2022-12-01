@@ -37,11 +37,17 @@ export class InputIntegerComponent implements OnInit {
     if(this.quantity > 0)
       this.quantity--;
       this.quantityChange.emit(this.quantity);
-
   }
+
  changeQuantity(event: { key: any; }): void {
     console.log(event.key);
    this.quantityChange.emit(this.quantity);
 
  }
+ onlyNumber(e: any): void {
+  if (!((e.key) <= 9 && (e.key) >= 0) || (e.key == " ")) {
+    e.preventDefault();
+   }
+  }
+
 }
