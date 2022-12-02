@@ -28,6 +28,4 @@ export class ShoppingCartComponent implements OnInit {
   ngOnInit(): void {
   }
 
-
-
 }

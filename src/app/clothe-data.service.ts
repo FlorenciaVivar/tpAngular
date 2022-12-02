@@ -19,14 +19,4 @@ export class ClotheDataService {
               tap((clothes: Clothe[]) => clothes.forEach(clothe => clothe.quantity= 0))
             );
   }
-
-  // public insertClothe(clothe : Clothe): Observable<Clothe>{
-  //   return this.http.post<Clothe>(URL,clothe);
-
-  // }
-
-  // public deleteClothe(clothe : Clothe): Observable<Clothe>{
-  //   return this.http.delete<Clothe>(URL + "/" + clothe.id)
-  // }
-
 }
