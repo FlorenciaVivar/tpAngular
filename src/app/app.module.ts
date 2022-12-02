@@ -11,6 +11,7 @@ import { ClothesAboutComponent } from './clothes-about/clothes-about.component';
 import { ClothesClothesComponent } from './clothes-clothes/clothes-clothes.component';
 import { AppRoutingModule } from './app-routing.module';
 import { InputIntegerComponent } from './input-integer/input-integer.component';
+import { ClothesContactComponent } from './clothes-contact/clothes-contact.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { InputIntegerComponent } from './input-integer/input-integer.component';
     ClothesAboutComponent,
     ClothesClothesComponent,
     InputIntegerComponent,
+    ClothesContactComponent,
   ],
   imports: [
     BrowserModule,
