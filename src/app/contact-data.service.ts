@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Contact } from './clothes-contact/contact';
+import { contact } from './clothes-contact/contact';
 import { Observable, tap} from 'rxjs';
 
 const URL = "https://638a58e34eccb986e8ab1158.mockapi.io/consulta";
@@ -12,15 +12,15 @@ export class ContactDataService {
 
   constructor(private http: HttpClient ) { }
 
-  public getAllContacts(): Observable <Contact[] >{
-    return this.http.get<Contact[]>(URL);
+  public getAllContacts(): Observable <contact[] >{
+    return this.http.get<contact[]>(URL);
     }
 
-  public insertContact(contact : Contact): Observable<Contact>{
-      return this.http.post<Contact>(URL,contact);
+  public insertContact(contact : contact): Observable<contact>{
+      return this.http.post<contact>(URL,contact);
     }
 
-  public deleteContact(contact : Contact): Observable<Contact>{
-    return this.http.delete<Contact>(URL + "/" + contact.id)
+  public deleteContact(contact : contact): Observable<contact>{
+    return this.http.delete<contact>(URL + "/" + contact.id)
   }
 }

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ContactDataService } from '../contact-data.service';
-import { Contact } from './contact';
+import { contact } from './contact';
 
 @Component({
   selector: 'app-clothes-contact',
@@ -9,8 +9,7 @@ import { Contact } from './contact';
 })
 export class ClothesContactComponent implements OnInit {
 
-  contact: Contact[] = [] ;
-  Contact:any;
+  contact: contact[] = [] ;
 
   constructor(
     private contactDataService: ContactDataService) { }
@@ -23,7 +22,8 @@ export class ClothesContactComponent implements OnInit {
   ngOnInit(): void {
    this.getAllContacts();
   }
-  c: Contact={
+
+  c: contact = {
     "name":'',
     "email":'',
     "contact":'',
@@ -33,8 +33,8 @@ export class ClothesContactComponent implements OnInit {
     this.contactDataService.insertContact(this.c).subscribe(contact =>{
      this.getAllContacts();
     });
-      this.c.name='';
-      this.c.email='';
+      this.c.name ='';
+      this.c.email ='';
       this.c.contact = '';
     }
 
