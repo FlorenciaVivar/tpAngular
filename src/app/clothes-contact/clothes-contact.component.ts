@@ -9,33 +9,42 @@ import { contact } from './contact';
 })
 export class ClothesContactComponent implements OnInit {
 
-  contact: contact[] = [] ;
+  contact: contact[] = [];
 
   constructor(
     private contactDataService: ContactDataService) { }
 
-  getAllContacts():void{
+  getAllContacts(): void {
     this.contactDataService.getAllContacts()
-    .subscribe(contact => this.contact = contact);
-   }
+      .subscribe(contact => this.contact = contact);
+  }
 
   ngOnInit(): void {
-   this.getAllContacts();
+    this.getAllContacts();
   }
 
   c: contact = {
-    "name":'',
-    "email":'',
-    "contact":'',
+    "name": '',
+    "email": '',
+    "contact": '',
   }
 
-  insert(){
-    this.contactDataService.insertContact(this.c).subscribe(contact =>{
-     this.getAllContacts();
+  insert() {
+    this.contactDataService.insertContact(this.c).subscribe(contact => {
+      console.log(this.c);
+      this.getAllContacts();
     });
-      this.c.name ='';
-      this.c.email ='';
-      this.c.contact = '';
+    this.c.name = '';
+    this.c.email = '';
+    this.c.contact = '';
+  }
+
+  remove(c: contact): void {
+    this.contactDataService.deleteContact(c).subscribe(c => {
+      // alert("se elimino : " + c.id)
+      this.getAllContacts()
     }
+    )
+  }
 
 }
