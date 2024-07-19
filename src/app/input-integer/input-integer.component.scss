@@ -1,10 +1,20 @@
+.container-quantity{
+  display: flex;
+  align-items: center;
+}
 input{
-  height: 1.8em;
-  width: 9em;
+  height: 30px;
+  width: 50px;
+  margin: 10px;
 }
 //saca flechas inputs
 input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button {
   -webkit-appearance: none;
-  margin: 0;
+
+}
+
+.btn{
+  height: 30px;
+  width: 50px;
 }

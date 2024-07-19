@@ -1,22 +1,27 @@
-  <div class="form-group">
-    <label for="formGroupExampleInput">Name</label>
-    <input type="text" class="form-control" [(ngModel)]="c.name" id="name" placeholder="Insert name" required>
-  </div>
-  <div class="form-group">
-    <label for="formGroupExampleInput2">Email</label>
-    <input type="email" class="form-control" [(ngModel)]="c.email"id="email" placeholder="Insert email" required>
-  </div>
-  <div >
-  <textarea class="form-control"  [(ngModel)]="c.contact" id="contact" name="textarea" rows="10" cols="50" placeholder="Escribe tu consulta" required></textarea>
-  </div>
-  <button class="btn btn-outline-info btn-sm" (click)="insert()" >Enviar</button>
-<div >
-  <div class="card" *ngFor="let contact of contact" style="width: 18rem;">
-    <div class="card-body">
-      <h1 class="card-title text-primary"> {{contact.name}} </h1>
-      <p class="card-text">{{contact.email}}</p>
-      <p class="card-text" >{{contact.contact}}</p>
-      <button class="btn btn-danger" (click)="remove(contact)">Eliminar</button>
+<div class="main-container">
+  <div class="form-section">
+   
+    <div class="form-group">
+      <label>Nombre</label>
+      <input type="text" class="form-control" [(ngModel)]="c.name" id="name" placeholder="Escriba su nombre" required>
+
+      <label>Email</label>
+      <input type="email" class="form-control" [(ngModel)]="c.email" id="email" placeholder="Escriba su email" required>
+
+      <textarea class="form-control" [(ngModel)]="c.contact" id="contact" name="textarea" rows="10" cols="50"
+        placeholder="Escribe tu consulta" required></textarea>
+      <button class="btn btn-outline-info btn-sm" type="submit"  (click)="insert()">Enviar</button>
     </div>
+
+
+
+    <div class="card" *ngFor="let contact of contact">
+      <div class="card-body">
+        <h1 class="card-title "> {{contact.name}} </h1>
+        <p class="card-text">{{contact.email}}</p>
+        <p class="card-text">{{contact.contact}}</p>
+        <button class="btn btn-danger btn-sm" (click)="remove(contact)">X</button>
+      </div>
+    </div>
+
   </div>
-</div>

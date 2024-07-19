@@ -30,14 +30,21 @@ export class ClothesContactComponent implements OnInit {
   }
 
   insert() {
-    this.contactDataService.insertContact(this.c).subscribe(contact => {
-      console.log(this.c);
-      this.getAllContacts();
-    });
-    this.c.name = '';
-    this.c.email = '';
-    this.c.contact = '';
-  }
+
+    if (this.c.name && this.c.email && this.c.contact) {
+      this.contactDataService.insertContact(this.c).subscribe(contact => {
+        console.log('Contacto enviado:', this.c);
+        this.getAllContacts();
+
+        this.c = {
+          name: '',
+          email: '',
+          contact: ''
+        };
+      });
+    } else {
+      console.log('Por favor, complete todos los campos.');
+    }}
 
   remove(c: contact): void {
     this.contactDataService.deleteContact(c).subscribe(c => {

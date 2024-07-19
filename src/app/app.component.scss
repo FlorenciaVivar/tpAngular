@@ -1,13 +1,22 @@
-.container{
-  padding:1,5rem;
+
+/* General */
+body {
+  font-family: 'Roboto';
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
+  min-height: 100vh;
+
 }
-footer{
+/* Footer */
+footer {
   height: 60px;
   line-height: 60px;
 }
 
-a{
-  font-size: large;
-  text-shadow: 2px 1px 2px rgb(246, 240, 183), 0 0 25px rgb(16, 16, 16), 0 0 5px rgb(248, 248, 248);
+.nav-link{
+  font-size: x-large;
+  color: whitesmoke;
+  margin: 10px;
 }
 

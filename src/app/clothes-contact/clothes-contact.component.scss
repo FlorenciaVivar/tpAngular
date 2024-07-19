@@ -1,1 +1,126 @@
+/* General */
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
+  min-height: 100vh;
+  padding: 20px;
+}
 
+/* Container for form and cards */
+.main-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 1000px;
+}
+
+/* Form Section */
+.form-section {
+  margin-top: 30px;
+  max-width: 700px;
+}
+
+
+.form-group {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+  width: 700px;
+}
+
+.form-control {
+
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+textarea.form-control {
+  resize: vertical;
+  margin-top: 20px;
+}
+
+button {
+ padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 10px;
+
+}
+
+.btn-outline-info {
+  color: #17a2b8;
+  border: 1px solid #17a2b8;
+}
+
+.btn-outline-info:hover {
+  background-color: #17a2b8;
+  color: #fff;
+}
+
+.btn-danger {
+  background-color: #dc3545;
+  color: #fff;
+  border: none;
+
+}
+
+.btn-danger:hover {
+  background-color: #c82333;
+}
+
+/* Card Section */
+.card-section {
+  display: flex;
+  width: 700px;
+}
+
+.card {
+  background: white;
+  margin: 10px;
+}
+
+
+.card-body {
+  padding: 10px;
+  text-align: center;
+}
+
+.card-title {
+  color: #78b0b9;
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+.card-text {
+  margin-bottom: 10px;
+  font-size: 15px;
+}
+
+.card button.btn-danger {
+  margin-top: 10px;
+  float: right;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.75rem;
+  line-height: 1.2;
+  border-radius: 0.2rem;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .main-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .form-section, .card-section {
+    width: 100%;
+  }
+
+  .card {
+    width: 100%;
+  }
+}
