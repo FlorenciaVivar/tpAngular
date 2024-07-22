@@ -30,4 +30,7 @@ export class ClothesListComponent implements OnInit {
   maxReached(m:string){
     alert(m);
   }
+  getSaleImage(): string {
+    return 'assets/img/sale.png';  
+  }
 }

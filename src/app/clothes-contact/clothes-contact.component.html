@@ -1,6 +1,6 @@
 <div class="main-container">
   <div class="form-section">
-   
+
     <div class="form-group">
       <label>Nombre</label>
       <input type="text" class="form-control" [(ngModel)]="c.name" id="name" placeholder="Escriba su nombre" required>
@@ -10,18 +10,22 @@
 
       <textarea class="form-control" [(ngModel)]="c.contact" id="contact" name="textarea" rows="10" cols="50"
         placeholder="Escribe tu consulta" required></textarea>
-      <button class="btn btn-outline-info btn-sm" type="submit"  (click)="insert()">Enviar</button>
+
     </div>
-
-
+    <button class="btn btn-outline-info btn-sm" type="submit" (click)="insert()">Enviar</button>
 
     <div class="card" *ngFor="let contact of contact">
-      <div class="card-body">
+
+      <div class="card-user">
+        <img src="assets/img/logo.png">
         <h1 class="card-title "> {{contact.name}} </h1>
+      </div>
+      <div class="card-body">
         <p class="card-text">{{contact.email}}</p>
         <p class="card-text">{{contact.contact}}</p>
-        <button class="btn btn-danger btn-sm" (click)="remove(contact)">X</button>
+
       </div>
+      <button class="btn btn-danger btn-sm" (click)="remove(contact)">X</button>
     </div>
 
   </div>

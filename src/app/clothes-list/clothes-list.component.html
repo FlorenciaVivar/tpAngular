@@ -1,13 +1,18 @@
-<div class="row row-cols-1 row-cols-md-4 " >
+
+<div class="row row-cols-3 row-cols-md-2 " >
   <div class="card" *ngFor="let clothe of clothes" [ngClass]="{'sale' : clothe.sale}" >
+    <div *ngIf="clothe.sale" class="sale-image">
+      <img [src]="getSaleImage()" alt="Sale Image" class="sale-img">
+    </div>
+
     <img [src]="clothe.image" [alt]="clothe.name" class="card-img-top" >
     <div class="card-body" >
       <h5 class="card-title">{{clothe.name | lowercase }}</h5>
-      <p class="card-text">{{clothe.price | currency : 'ARS' : 'symbol' : '1.0-0' }}</p>
+      <p class="card-text">{{clothe.price | currency : 'ARS ' : 'symbol' : '1.0-0' }}</p>
       <p><span  *ngIf="clothe.stock == 0" >Sin Stock</span> </p>
     <div class="card-group">
       <app-input-integer [(quantity)]="clothe.quantity" [max]="clothe.stock" *ngIf="clothe.stock" (maxReached)="maxReached($event)"></app-input-integer>
-      <button id="button" (click)="addToCart(clothe)">Agregar</button>
+      <button id="button" (click)="addToCart(clothe)"> Agregar </button>
       </div>
     </div>
   </div>

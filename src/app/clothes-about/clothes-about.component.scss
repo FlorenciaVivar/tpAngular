@@ -1,15 +1,31 @@
-p
- {
+/* Estilo para párrafos */
+p {
   font-style: italic;
- }
-.container{
-    margin: 30px;
+  line-height: 1.5;
+  margin-top: 0;
 
 }
-img{
+
+/* Contenedor principal */
+.container {
+  margin: 30px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+/* Estilo para imágenes */
+img {
   margin: 5px;
-  width: 300px;
-  height: 150px;
+  width: 200px;
+  height: 100px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.8s;
 }
 
-
+img:hover {
+  transform: scale(1.05);
+}
