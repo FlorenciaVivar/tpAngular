@@ -1,19 +1,18 @@
-/* Estilo para párrafos */
-p {
-  font-style: italic;
-  line-height: 1.5;
-  margin-top: 0;
-
-}
-
 /* Contenedor principal */
 .container {
-  margin: 30px;
+  margin-top: 30px;
   padding: 20px;
   background-color: #f9f9f9;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+}
+
+/* Estilo para párrafos */
+p {
+  font-style: italic;
+  margin-top: 0;
+
 }
 
 /* Estilo para imágenes */
@@ -24,8 +23,13 @@ img {
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
   transition: transform 0.8s;
+  &:hover {
+    transform: scale(1.05);
+  }
 }
+@media (max-width: 767.98px) {
+  .container {
 
-img:hover {
-  transform: scale(1.05);
+    padding: 10px;
+  }
 }

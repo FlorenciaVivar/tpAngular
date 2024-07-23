@@ -15,7 +15,7 @@
             <img class="miniatura" [src]="clothe.image" [alt]="clothe.name">
             </td>
           <th>{{clothe.quantity}}</th>
-          <th>{{clothe.price|currency : 'ARS ' : 'symbol' : '1.0-0' }}</th>
+          <th >{{clothe.price|currency : 'ARS ' : 'symbol' : '1.0-0' }}</th>
           <th>{{clothe.price*clothe.quantity|currency : 'ARS ' : 'symbol' : '1.0-0' }}</th>
         </tr>
       </tbody>

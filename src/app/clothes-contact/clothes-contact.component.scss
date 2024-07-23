@@ -1,24 +1,22 @@
 
-/* Container for form and cards */
 .main-container {
   display: flex;
   justify-content: center;
 
 }
 
-/* Form Section */
 .form-section {
   margin-top: 30px;
   max-width: 700px;
 }
 
+.custom-width {
+  width: 700px;
+}
 
 .form-group {
-  padding: 5px;;
   font-weight: bold;
   margin-bottom: 5px;
-  width: 700px;
-
 }
 
 .form-control {
@@ -28,7 +26,7 @@
   box-sizing: border-box;
 }
 
-textarea.form-control {
+textarea {
   resize: vertical;
   margin-top: 20px;
 }
@@ -41,68 +39,59 @@ textarea.form-control {
   border-radius: 5px;
   cursor: pointer;
   margin: 5px;
-
-}
-
-.btn-outline-info:hover{
-  background-color: #17a2b8;
-  color: #fff;
+  &:hover{
+    background-color: #17a2b8;
+    color: #fff;
+  }
 }
 
 .btn-danger {
   background-color: #dc3545;
   color: #fff;
   border: none;
+  &:hover {
+    background-color: #c82333;
+  }
 }
-
-.btn-danger:hover {
-  background-color: #c82333;
-}
-
-/* Card Section */
 
 .card {
   background: white;
-  margin: 10px;
+  margin-top: 10px;
   display: flex;
   flex-direction: column;
-}
-.card-user{
-  display: flex;
-  flex-direction: row;
-  margin: 10px;
- align-items: center;
+  border: none;
+  .card-user{
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+    align-items: center;
+
+  }
+  img{
+    border-radius: 30px;
+    width: 30px;
+    height: 30px;
+  }
+  .card-title {
+    text-transform: uppercase;
+    color: #78b0b9;
+    margin-bottom: 10px;
+    font-size: 20px;
+    margin: 10px;
+  }
+  button.btn-danger {
+    margin: 10px;
+    width: 50px;
+    font-size: 15px;
+    margin-left: auto;
+  }
+  .card-text {
+    margin-left: 30px;
+    font-size: 15px;
+  }
 
 }
 
-img{
-  border-radius: 30px;
-  width: 30px;
-  height: 30px;
-}
-
-.card-title {
-  text-transform: uppercase;
-  color: #78b0b9;
-  margin-bottom: 10px;
-  font-size: 20px;
-  margin: 10px;
-}
-
-.card-text {
-  margin-left: 30px;
-  font-size: 15px;
-}
-
-.card button.btn-danger {
-  margin: 10px;
-  width: 50px;
-  font-size: 15px;
-  margin-left: auto;
-
-}
-
-/* Media Queries for Responsiveness */
 @media (max-width: 768px) {
   .main-container {
     flex-direction: column;
@@ -117,3 +106,7 @@ img{
     width: 100%;
   }
 }
+@media (max-width: 767.98px) {
+  .custom-width {
+    max-width: 100%;
+  }}
