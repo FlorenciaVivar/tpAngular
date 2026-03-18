@@ -40,4 +40,20 @@ export class ClothesCartService {
 
    this.totalPrice.next(this._totalPrice);
    }
+  removeProduct(product: Clothe) {
+    let item = this._cartList.find(c => c.name === product.name);
+
+    if (item) {
+      if (item.quantity > 1) {
+        item.quantity--;
+      } else {
+        this._cartList = this._cartList.filter(
+          c => c.name !== product.name
+        );
+      }
+    }
+
+    this.cartList.next(this._cartList);
+    this.total();
+  }
 }

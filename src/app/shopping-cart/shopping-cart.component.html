@@ -7,16 +7,25 @@
           <th>Cantidad</th>
           <th>Precio</th>
           <th>Subtotal</th>
+          <th>Acciones</th>
         </tr>
       </thead>
       <tbody>
         <tr  *ngFor = "let clothe of cartList$ | async ">
           <td >
             <img class="miniatura" [src]="clothe.image" [alt]="clothe.name">
+
             </td>
           <th>{{clothe.quantity}}</th>
           <th >{{clothe.price|currency : 'ARS ' : 'symbol' : '1.0-0' }}</th>
           <th>{{clothe.price*clothe.quantity|currency : 'ARS ' : 'symbol' : '1.0-0' }}</th>
+         <td>
+           <button class="btn btn-danger btn-sm"
+                      (click)="removeFromCart(clothe)">
+           🗑️
+            </button>
+         </td>
+
         </tr>
       </tbody>
   </table>
